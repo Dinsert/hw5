@@ -5,20 +5,21 @@ public class Main {
 
         int clientOS = 0;
         int clientDeviceYear = 2015;
-        if (clientOS == 0) {
+        if (clientOS < 1) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS == 1) {
+        } else {
             System.out.println("Установите версию приложения для Android по ссылке");
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегчённую версию приложения для Android по ссылке");
-            }
         }
 
 
-        int year = 2021;
+        if (clientOS < 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегчённую версию приложения для iOS по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегчённую версию приложения для Android по ссылке");
+        }
+
+
+        int year = 2000;
         if (year < 1584) {
 
         } else if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {

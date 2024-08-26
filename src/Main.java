@@ -19,10 +19,8 @@ public class Main {
         }
 
 
-        int year = 2000;
-        if (year < 1584) {
-
-        } else if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        int year = 2021;
+        if (year > 1584 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
@@ -30,22 +28,21 @@ public class Main {
 
 
         int deliveryDistance = 95;
-        int dayDelivery;
-        if (deliveryDistance < 20) {
-            dayDelivery = 1;
-            System.out.println("Потребуется дней " + dayDelivery);
-        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            dayDelivery = 2;
-            System.out.println("Потребуется дней " + dayDelivery);
-        } else if (deliveryDistance >= 60 && deliveryDistance < 100){
-            dayDelivery = 3;
-            System.out.println("Потребуется дней " + dayDelivery);
-        } else {
+        int dayDelivery = 0;
+        if (deliveryDistance > 100) {
             System.out.println("Доставки нет");
+        } else if (deliveryDistance < 20) {
+            dayDelivery = 1;
+        } else if (deliveryDistance > 20 && deliveryDistance < 60) {
+            dayDelivery = 2;
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            dayDelivery = 3;
         }
+        System.out.println("Потребуется дней " + dayDelivery);
 
 
-        int monthNumber = 10;
+
+            int monthNumber = 10;
         switch (monthNumber) {
             case 12:
             case 1:
